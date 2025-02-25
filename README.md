@@ -28,4 +28,4 @@ Follow the steps below to set up the project and install the required libraries:
    
    If you are using Git, you can clone the repository:
    ```bash
-   git clone 
+   git clone https://github.com/NTUJackie/wordle_api_interaction
