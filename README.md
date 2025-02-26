@@ -1,6 +1,6 @@
 # Automated Wordle Solver
 
-This project is an automated solver for the Wordle-like puzzle game. The program interacts with the Wordle API, guesses words, and visualizes each guess using color feedback based on Wordle's rules (green for correct letters, yellow for present letters, and gray for absent letters).
+This project is an automated solver for the Wordle-like puzzle game. The program interacts with the Wordle API, guesses words, and visualizes each guess using color feedback based on Wordle's rules (green for correct letters, yellow for present letters, and gray for absent letters). The wordle_api_interaction_word.py file is used by users to input words for others to guess.
 
 ## Features
 
@@ -13,7 +13,7 @@ This project is an automated solver for the Wordle-like puzzle game. The program
 
 To run the project, you need the following:
 
-- Python 3.x
+- Python 3
 - `nltk` library
 - `requests` library
 - `matplotlib` library
