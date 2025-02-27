@@ -45,41 +45,35 @@ def select_word_for_guess(feedback):
             # Record the correct letter.
             correct[i] = letter
 
-    # Select words from the dictionary that match the criteria
-    word_candidates = []
-    for word in dict_words:
+    # Randomly select a word from dict_words and check if it matches the feedback
+    while True:
+        guess = random.choice(dict_words)
+
         match = True
 
         # Check that the "correct" letter is in the correct position
         for i, letter in correct.items():
-            if word[i] != letter:
+            if guess[i] != letter:
                 match = False
                 break
 
         # Check if the "present" letters are in the correct position
         if match:
             for i, letter in present.items():
-                if word[i] == letter or letter not in word:  # The present letter cannot be in the original position and must exist
+                if guess[i] == letter or letter not in guess:  # The present letter cannot be in the original position and must exist
                     match = False
                     break
 
         # Check if the letter "absent" appears in the word
         if match:
             for letter in absent:
-                if letter in word:
+                if letter in guess:
                     match = False
                     break
 
-        # If the word meets the conditions, add it to the candidate list
+        # If the word matches the feedback, return it
         if match:
-            word_candidates.append(word)
-
-    # If a matching word is found, a random one is chosen.
-    if word_candidates:
-        return random.choice(word_candidates)
-    else:
-        # If no word matches the criteria, return a default word (possibly chosen randomly).
-        return random.choice(dict_words)
+            return guess
 
 
 def visualize_feedback(feedback, guess, attempts):
@@ -147,7 +141,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
