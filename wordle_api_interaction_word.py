@@ -103,14 +103,19 @@ def visualize_feedback(feedback, guess, attempts):
     plt.draw()
     plt.pause(1)
 
+import tkinter as tk
+from tkinter import simpledialog
+
 
 def main():
     # Initial guess. The word can be selected by yourself or replaced by system input.
     guess = random.choice(dict_words)  # Randomly select an initial word from the dictionary
     attempts = 0
     correct_word = False
-    feedback = None
-    word = input()
+    root = tk.Tk()
+    root.withdraw()
+
+    word = simpledialog.askstring("Input", "please input word:")
     plt.ion()  # Turn on interactive mode to dynamically update the plot
 
     while attempts < 6 and not correct_word:
